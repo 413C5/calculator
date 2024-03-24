@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiCalculadora.MainPage">
+    <!--Programa que permite calcular el resultado de una operación dada, a través de una interfáz gráfica
+    que emplea botones,como lo son los números
+    Autor:Alejandro González Zárate-->
+
+    <!--Definición de estilos para botones de calculadora-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="BotonNumero">
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Background" Value="#424242"/>
+            </Style>
+            <Style TargetType="Button" x:Key="BotonAdicional">
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="Background" Value="#d6d6d6"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="BotonOperaciones">
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="Background" Value="#ff9300"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!--Establecimiento de Grid Layout-->
+    <Grid BackgroundColor="#2F2F2F" Padding="10">
+        <!--Definición renglones calculadora-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/> 
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height=".6*"/>
+        </Grid.RowDefinitions>
+        <!--Mi calculadora /Renglon 1-->
+        <Label Grid.Row="0"                
+               Text="Mi calculadora"
+               FontSize="Large"
+               BackgroundColor="Black"
+               TextColor="White"
+               HorizontalTextAlignment="Center"
+               Padding="20"/>                   
+
+        <!--Lugar de operaciones/Renglon 2-->
+        <Frame CornerRadius="5" Grid.Row="1" 
+               BackgroundColor="White"
+               HeightRequest="80">
+            <Label x:Name="lblScreen" Text="0"
+                   HorizontalTextAlignment="End"
+                   VerticalTextAlignment="End"
+                   TextColor="Black"
+                   FontSize="50" LineBreakMode="TailTruncation"/>
+        </Frame>
+
+        <!--Teclado, se anida otro grid al manejarse muchos botones/Renglon3-->
+        <Grid Grid.Row="2">
+            <!--6 renglones x 4 columnas, siendo estas las que contendran los botones-->
+            <Grid.RowDefinitions> 
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/> 
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--Primer renglon botones-->
+            <Button x:Name="btnMS" Clicked="btnMS_Clicked" Style="{StaticResource BotonAdicional}"
+                    Grid.Row="0" Grid.Column="0" Text="MS"/>
+            <Button x:Name="btnMR" Clicked="btnMR_Clicked" Style="{StaticResource BotonAdicional}"
+                    Text="MR" IsEnabled="False" Grid.Row="0" Grid.Column="1" />
+            <Button x:Name="btnClear" Clicked="btnClear_Clicked" Style="{StaticResource BotonAdicional}"
+                    Text="C" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"/>
+
+            <!--Segundo renglon botones-->
+            <Button x:Name="btnInverso" Clicked="btnInverso_Clicked" Style="{StaticResource BotonOperaciones}"
+                    Text="1/x" Grid.Row="1" Grid.Column="0"/>
+            <Button x:Name="btnCuadrado" Clicked="btnCuadrado_Clicked" Style="{StaticResource BotonOperaciones}"
+                    Text="x&#178;" Grid.Row="1" Grid.Column="1"/>
+            <Button x:Name="btnRaiz" Clicked="btnRaiz_Clicked" Style="{StaticResource BotonOperaciones}"
+                    Text="&#x221A;"  Grid.Row="1" Grid.Column="2"/>
+            <Button x:Name="btnDivision" Clicked="btnOperacion_Clicked" Style="{StaticResource BotonOperaciones}"
+                    Text="&#x00F7;" Grid.Row="1" Grid.Column="3" />
+
+            <!--Tercer renglon botones-->
+            <Button x:Name="btn7" Clicked="btnNum_Clicked" Style="{StaticResource BotonNumero}"
+                    Text="7" Grid.Row="2" Grid.Column="0" />
+            <Button x:Name="btn8" Clicked="btnNum_Clicked" Style="{StaticResource BotonNumero}"
+                    Text="8" Grid.Row="2" Grid.Column="1" />
+            <Button x:Name="btn9" Clicked="btnNum_Clicked" Style="{StaticResource BotonNumero}"
+                    Text="9" Grid.Row="2" Grid.Column="2" />
+
+            <!--Cuarto renglon botones-->
+            <Button x:Name="btn4" Clicked="btnNum_Clicked" Style="{StaticResource BotonNumero}"
+                    Text="4" Grid.Row="3" Grid.Column="0" />
+            <Button x:Name="btn5" Clicked="btnNum_Clicked" Style="{StaticResource BotonNumero}"
+                    Text="5" Grid.Row="3" Grid.Column="1" />
+            <Button x:Name="btn6" Clicked="btnNum_Clicked" Style="{StaticResource BotonNumero}"
+                    Text="6" Grid.Row="3" Grid.Column="2" />
+
+            <Button x:Name="btn1" Clicked="btnNum_Clicked" Style="{StaticResource BotonNumero}"
+                    Text="1" Grid.Row="4" Grid.Column="0" />
+            <Button x:Name="btn2" Clicked="btnNum_Clicked" Style="{StaticResource BotonNumero}"
+                    Text="2" Grid.Row="4" Grid.Column="1" />
+            <Button x:Name="btn3" Clicked="btnNum_Clicked" Style="{StaticResource BotonNumero}"
+                    Text="3" Grid.Row="4" Grid.Column="2" />
+
+            <!--Quinto renglon botones-->
+            <Button x:Name="btn0" Clicked="btnNum_Clicked" Style="{StaticResource BotonNumero}"
+                    Text="0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" />
+            <Button x:Name="btnPunto" Clicked="btnNum_Clicked" Style="{StaticResource BotonNumero}"
+                    Text="." Grid.Row="5" Grid.Column="2" />
+
+            <!--Botones de operacion  faltantes-->
+            <Button x:Name="btnMultiplicacion" Clicked="btnOperacion_Clicked" Style="{StaticResource BotonOperaciones}"
+                    Text="x" TextTransform="None" Grid.Row="2" Grid.Column="3" />
+            <Button x:Name="btnResta" Clicked="btnOperacion_Clicked" Style="{StaticResource BotonOperaciones}"
+                    Text="&#x2212;" Grid.Row="3" Grid.Column="3" />
+            <Button x:Name="btnSuma" Clicked="btnOperacion_Clicked" Style="{StaticResource BotonOperaciones}"
+                    Text="+" Grid.Row="4" Grid.Column="3" />
+            <Button x:Name="btnIgual" Clicked="btnIgual_Clicked" FontSize="30" Background="#FF64BBBB"
+                    Text="=" Grid.Row="5" Grid.Column="3" />
+        </Grid> 
+    </Grid>
+
+
+</ContentPage>

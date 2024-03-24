@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiCalculadora.Android", "MiCalculadora.Android\MiCalculadora.Android.csproj", "{4DA4E8EC-4238-46CB-A8DB-D27CE695FF0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiCalculadora", "MiCalculadora\MiCalculadora.csproj", "{53070328-7930-4AD5-BE84-7541C1E20029}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DA4E8EC-4238-46CB-A8DB-D27CE695FF0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DA4E8EC-4238-46CB-A8DB-D27CE695FF0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DA4E8EC-4238-46CB-A8DB-D27CE695FF0C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4DA4E8EC-4238-46CB-A8DB-D27CE695FF0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DA4E8EC-4238-46CB-A8DB-D27CE695FF0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DA4E8EC-4238-46CB-A8DB-D27CE695FF0C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{53070328-7930-4AD5-BE84-7541C1E20029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53070328-7930-4AD5-BE84-7541C1E20029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53070328-7930-4AD5-BE84-7541C1E20029}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{53070328-7930-4AD5-BE84-7541C1E20029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53070328-7930-4AD5-BE84-7541C1E20029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53070328-7930-4AD5-BE84-7541C1E20029}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2A0364D-1390-435F-A234-6E79D7696DB0}
+	EndGlobalSection
+EndGlobal
