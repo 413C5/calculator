@@ -87,17 +87,11 @@ namespace MiCalculadora
             if (!lblScreen.Text.Equals("Error"))
             {
                 num1 = Convert.ToDouble(lblScreen.Text);
-                if (num1 != 0)
-                {
-                    resultado *=resultado ;
-                    lblScreen.Text = resultado.ToString();
-                }
-                else
-                {
-                    lblScreen.Text = "Error";
-                }
-            }
 
+                resultado = num1 * num1;
+
+                lblScreen.Text = resultado.ToString();
+            }
         }
 
         //Calcula la raiz cuadrada de un numero
@@ -106,18 +100,17 @@ namespace MiCalculadora
             if (!lblScreen.Text.Equals("Error"))
             {
                 num1 = Convert.ToDouble(lblScreen.Text);
-                if (num1 != 0)
+
+                if (num1 >= 0)
                 {
-                    resultado = Math.Sqrt(resultado);
+                    resultado = Math.Sqrt(num1);
                     lblScreen.Text = resultado.ToString();
                 }
                 else
                 {
-                    lblScreen.Text = "Error";
+                    lblScreen.Text = "Error"; 
                 }
             }
-            
-
         }
 
         //Almacenar en la variable la operacion escogida y el primer numero escrito
